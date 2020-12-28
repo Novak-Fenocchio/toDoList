@@ -34,6 +34,7 @@ session_start();
         );
         $list_tasks[$datesa][] = $task;
     }
+    $vara = '';
 ?>
 
 <html>
@@ -46,12 +47,31 @@ session_start();
     ?>
 
     <main class='container_main'>
+    <aside>
+        <div class="button" id='btnAddTask'>
+            <button class='btn_rojo btn_add_task_aside' id='buttonAddTask'>Añadir tarea!</button>
+        </div> 
+        <h2 class='titulo_aside'><i class="fas fa-recycle i1"></i> Papelera</h2>
+        <div class="button">
+         <a href='sesiones.php'><button class='btn_rojo btn_add_task_aside cerrar_sesion'  id='buttonAddTask'>Cerrar sesión</button></a>   
+        </div>
+    </aside>
+    <section class='section_tasks'>
+
     <h3 style='text-align: center;'>Bienvenido <?php echo $usuario ?></h3>
-    
+    <?php if (empty($list_tasks)) {?> 
+        <div class="empty_container">
+            <div class="box_empty">
+                <i class="fas fa-code i2"></i> 
+                <h5><?php echo 'No hay notas aún, puedes agregarlas con el botón de la izquierda.';?></h5>
+            </div>
+        </div>
+    <?php }?>
     <?php foreach($list_tasks as $dia => $list_task): ?>
     <h2 class='date_task_general'><?php echo date($dia); ?></h2> 
     <div class="border_orange"></div>
             <?php foreach($list_task as $task_detail): ?>
+                 
             <div class="container_task">
                 <div class="container_task3">
                     <div class="container_task4">
@@ -75,9 +95,6 @@ session_start();
             <hr>
         <?php endforeach ?>    
     <?php endforeach ?>
-    <div class="button" id='btnAddTask'>
-        <button class='btn_rojo' id='buttonAddTask'>Añadir tarea!</button>
-    </div>
 
     <div class="container_add_task " id='addTasks' >
          <form method="POST" action='add.php' >
@@ -108,6 +125,7 @@ session_start();
         </div>
 
 </div>
+</section>
 
     </main>
         <?php include_once 'scripts.php' ?>
