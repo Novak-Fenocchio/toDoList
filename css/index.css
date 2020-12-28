@@ -18,6 +18,10 @@ h2 {
     font-size: 2.5vw;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .button {
     text-align: center;
 }
@@ -91,19 +95,29 @@ aside {
     color: white;
     font-size: 2vw;
     margin-left: 1vw;
+    margin-right: 1vw;
     margin-top: 1vw;
     padding: 0.3vw;
+    transition: all 0.3s;
+}
+
+.titulo_aside:hover {
+    background: rgb(189, 23, 23);
 }
 
 .i1 {
     color: rgb(81, 224, 81);
 }
 
+.i4 {
+    color: lightblue;
+}
+
 .cerrar_sesion {
     background: none;
     border: 3px solid white;
     color: white;
-    margin-top: 60vh;
+    margin-top: 50vh;
     border-radius: 5px 5px 5px 15px;
     -moz-border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;

@@ -4,6 +4,7 @@
 
     $titleTask = $_POST['nameTask'];
     $contentTask = $_POST['task'];
+    $stateTask = $_POST['stateTask'];
     $statusTask = $_POST['status'];
     $dateTask = $_POST['date'];
     $username = $_SESSION['user'];
@@ -15,7 +16,7 @@
     if ($conn->connect_error) {
        die("Connection failed: " . $conn->connect_error);
     } 
-    $sql_agregar = "INSERT INTO tasks(nameTask,task,statusTask,dateTask,user) VALUES ('$titleTask', '$contentTask', '$statusTask', '$dateTask', '$username')";
+    $sql_agregar = "INSERT INTO tasks(nameTask,task,stateTask,statusTask,dateTask,user) VALUES ('$titleTask', '$contentTask', '$stateTask' ,'$statusTask', '$dateTask', '$username')";
 
     if (mysqli_query($conn, $sql_agregar)) {
        echo "Registro ingresado correctamente";
