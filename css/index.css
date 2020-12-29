@@ -56,6 +56,10 @@ a:hover {
     height: 10vh;
 }
 
+.header i {
+    display: none;
+}
+
 
 /**MAIN**/
 
@@ -113,11 +117,26 @@ aside {
     color: lightblue;
 }
 
+.span_aside {
+    color: rgb(240, 240, 240);
+    font-weight: 600;
+    font-size: 2vw;
+}
+
+.span_aside:hover {
+    background-color: rgb(224, 76, 76)
+}
+
+.i5 {
+    color: rgb(253, 149, 253);
+    font-size: 2vw;
+}
+
 .cerrar_sesion {
     background: none;
     border: 3px solid white;
     color: white;
-    margin-top: 50vh;
+    margin-top: 45vh;
     border-radius: 5px 5px 5px 15px;
     -moz-border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
@@ -223,6 +242,10 @@ aside {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.container_add_taskMobile {
+    display: none;
+}
+
 .container_add_task2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -279,6 +302,10 @@ select {
 .container_status_task {
     text-align: right;
     font-size: 2vw;
+}
+
+.iP {
+    font-size: 4vw;
 }
 
 .status {

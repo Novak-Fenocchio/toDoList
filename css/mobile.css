@@ -1,0 +1,114 @@
+@media(max-width: 700px) {
+    h1 {
+        font-size: 9vw;
+    }
+    h2 {
+        font-size: 7vw;
+    }
+    h3 {
+        font-size: 7vw;
+    }
+    h4 {
+        font-size: 3vw;
+    }
+    .btn_rojo {
+        font-size: 5vw;
+    }
+    /**Header**/
+    .header {
+        height: 7vh;
+        padding: 1vw;
+    }
+    .header i {
+        display: block;
+        margin-top: 1.5vh;
+        margin-left: 2vw;
+        font-size: 6vw;
+        float: left;
+    }
+    .presentacion {
+        padding-top: 2vw;
+    }
+    /**Task**/
+    .section_task {
+        padding-top: 2.5vw;
+    }
+    .task {
+        font-size: 4vw;
+    }
+    .iP {
+        font-size: 6vw;
+    }
+    .status {
+        font-size: 4vw;
+    }
+    .dateTask {
+        font-size: 3vw;
+    }
+    .maldito {
+        width: 100%;
+    }
+    .container_task {
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+    /**Principal view**/
+    .container_main {
+        display: block;
+    }
+    /**ASIDE**/
+    aside {
+        display: none;
+    }
+    .titulo_aside {
+        font-size: 6vw;
+        margin-left: 8vw;
+    }
+    .i5 {
+        font-size: 6vw;
+    }
+    /**Add task**/
+    .container_add_taskMobile {
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+        display: block;
+        background: white;
+        padding: 2vw;
+    }
+    .addTask {
+        border-radius: 15px 15px 15px 15px;
+        -moz-border-radius: 15px 15px 15px 15px;
+        -webkit-border-radius: 15px 15px 15px 15px;
+        border: 0px solid #000000;
+        text-align: center;
+        height: 30%;
+        width: 50%;
+    }
+    .container_add_task2 {
+        display: block;
+    }
+    .btn_add_task_aside {
+        display: none;
+    }
+    .add_content_task input {
+        font-size: 5vw;
+    }
+    .add_name_task input {
+        font-size: 5vw;
+    }
+    select {
+        width: 40%;
+        font-size: 4.5vw;
+    }
+    .calendar {
+        font-size: 4.5vw;
+        width: 50%;
+    }
+    .container_buttons_add {
+        margin-bottom: 5vw;
+    }
+    .cerrar_sesion {
+        display: block;
+        margin-top: 5vh;
+    }
+}

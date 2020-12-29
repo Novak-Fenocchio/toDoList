@@ -1,3 +1,3 @@
 <header class="header">
-    <h1>Tareas</h1>
+ <i class="fas fa-bars" id='menu'></i> <h1>Tareas</h1>
 </header>

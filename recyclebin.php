@@ -11,7 +11,7 @@
         echo $e->getMessage();
     };
 
-    $list_tasks_bin = array();
+    $list_tasks = array();
     //Make a array with the tasks and I put them in the array of the lists 
     while($tasks = $resultado->fetch_assoc())
     {
@@ -24,17 +24,9 @@
             'status' => $tasks['statusTask'],
             'date' => $tasks['dateTask']
         );
-        $list_tasks_bin[$datesa][] = $task;
+        $list_tasks[$datesa][] = $task;
     }
-    /* foreach($list_tasks_bin as $dia => $tasks_bin)
-    {
-        echo $dia;
-        foreach($tasks_bin as $task_bin)
-        {
-            echo $task_bin['task'];
-        }
-    }
- */
+    $size_array = 0;
 ?>
 <html>
     <?php include_once 'includes/templates/head.php' ?>
@@ -46,7 +38,7 @@
         <section class='section_tasks'>
 
         <h3 style='text-align: center;'>Bienvenido <?php echo $usuario ?></h3>
-    <?php if (empty($list_tasks_bin)) {?> 
+    <?php if (empty($list_tasks)) {?> 
         <div class="empty_container">
             <div class="box_empty">
                 <i class="fas fa-code i2"></i> 
@@ -54,29 +46,29 @@
             </div>
         </div>
     <?php }?>
-    <?php foreach($list_tasks_bin as $dia => $tasks_bin): ?>
+    <?php foreach($list_tasks as $dia => $tasks_bin): ?>
     <h2 class='date_task_general'><?php echo date($dia); ?></h2> 
     <div class="border_orange"></div>
-            <?php foreach($tasks_bin as $task_bin): ?>
+            <?php foreach($tasks_bin as $task): ?>
                  
             <div class="container_task">
                 <div class="container_task3">
                     <div class="container_task4">
-                        <h2 class='task_<?php echo $task_bin['status']; ?>'><?php echo $task_bin['titleTask'];?></h2>
+                        <h2 class='task_<?php echo $task['status']; ?>'><?php echo $task['titleTask'];?></h2>
                             <div class="input-group" style="width: 40%;">
                                 <div class="input-group-prepend">
                                     <div class="container_check">
-                                    <a href="editar.php?id=<?php echo $task_bin["id"]?>"><i class="fas fa-check check"></i></a>
+                                    <a href="editar.php?id=<?php echo $task["id"]?>"><i class="fas fa-check check"></i></a>
                                     </div>
                                 </div>
-                            <span id="task<?php echo $task_bin['id'];?>"  class='<?php echo $task_bin['stateTask']; ?> task'><?php echo $task_bin['task'];?></span>  
+                            <span id="task<?php echo $task['id'];?>"  class='<?php echo $task['stateTask']; ?> task'><?php echo $task['task'];?></span>  
                         </div> 
                     </div>
                 
                 </div>
                 <div class="container_status_task">
-                    <span class='<?php echo $task_bin['status']; ?> status'><?php echo $task_bin['status']; ?></i></span>    
-                    <span class='dateTask'><i class="far fa-calendar-alt"></i> <?php echo $task_bin['date']; ?></span>
+                    <span class='<?php echo $task['status']; ?> status'><?php echo $task['status']; ?></i></span>    
+                    <span class='dateTask'><i class="far fa-calendar-alt"></i> <?php echo $task['date']; ?></span>
                 </div>
             </div>
             <hr>
@@ -96,7 +88,6 @@
                     </div>
                     <div class="buttons_add_task">
                         <div class="container_buttons_add">
-
                             <select name="status" id="" class='box_text'>
                                 <option value="Importante">Importante</option>
                                 <option value="Urgente">Urgente</option>
